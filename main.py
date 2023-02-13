@@ -12,14 +12,17 @@ def are_matching(left, right):
 def find_mismatch(text):
     opening_brackets_stack = []
     for i, next in enumerate(text):
-        if next in ['(', '[', '{']:
+        if next in "([{":
             # Process opening bracket, write your code here
             opening_brackets_stack.append(Bracket(next, i + 1))
             pass
 
         if next in ")]}":
             # Process closing bracket, write your code here
-            if not opening_brackets_stack or not 
+            if not opening_brackets_stack or not opening_brackets_stack[-1].match(next):
+                print(i + 1)
+                return
+            opening_bracekts_stack.pop()
             pass
 
 
