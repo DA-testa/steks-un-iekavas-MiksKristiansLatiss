@@ -28,6 +28,8 @@ def find_mismatch(text):
 
 def main():
     text = input()
+    for position in range(len(text)):
+      next_char = text[position]
     mismatch = find_mismatch(text)
     # Printing answer, write your code here
     if mismatch == "Success":
